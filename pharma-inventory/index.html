@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คลังยา — ระบบบริหารคลังยาและเวชภัณฑ์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="side">
+    <div class="side__brand">
+      <div class="side__mark">Rx</div>
+      <div class="side__brandtext">
+        <div class="side__title">คลังยา</div>
+        <div class="side__sub">Pharmacy Stock System</div>
+      </div>
+    </div>
+
+    <nav class="side__nav" id="navList">
+      <button class="navitem is-active" data-view="dashboard"><span class="navitem__n">01</span><span>Dashboard</span></button>
+      <button class="navitem" data-view="drugs"><span class="navitem__n">02</span><span>ข้อมูลยา</span></button>
+      <button class="navitem" data-view="receive"><span class="navitem__n">03</span><span>รับยาเข้า</span></button>
+      <button class="navitem" data-view="dispense"><span class="navitem__n">04</span><span>จ่ายยาออก</span></button>
+      <button class="navitem" data-view="lots"><span class="navitem__n">05</span><span>Lot &amp; Expire</span></button>
+      <button class="navitem" data-view="count"><span class="navitem__n">06</span><span>ตรวจนับสต็อก</span></button>
+      <button class="navitem" data-view="reports"><span class="navitem__n">07</span><span>รายงาน</span></button>
+      <button class="navitem" data-view="alerts"><span class="navitem__n">08</span><span>แจ้งเตือน</span> <span class="navitem__badge" id="alertBadge">0</span></button>
+      <button class="navitem" data-view="users"><span class="navitem__n">09</span><span>ผู้ใช้งานและสิทธิ์</span></button>
+      <button class="navitem" data-view="security"><span class="navitem__n">10</span><span>ความปลอดภัย</span></button>
+    </nav>
+
+    <div class="side__footer">
+      <div class="side__footer-line">ข้อมูลถูกเก็บในเบราว์เซอร์นี้ (localStorage)</div>
+      <button class="btn btn--ghost btn--sm" id="resetDataBtn">ล้างข้อมูลตัวอย่าง</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="topbar">
+      <div>
+        <div class="topbar__eyebrow" id="viewEyebrow">01 · ภาพรวม</div>
+        <h1 class="topbar__title" id="viewTitle">Dashboard</h1>
+      </div>
+      <div class="topbar__user">
+        <div class="topbar__usertxt">
+          <div id="topUserName">เภสัชกร สมชาย</div>
+          <div id="topUserRole" class="topbar__userrole">Admin</div>
+        </div>
+        <div class="topbar__avatar">สช</div>
+      </div>
+    </header>
+
+    <div class="viewport" id="viewport">
+      <!-- views injected here -->
+    </div>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
